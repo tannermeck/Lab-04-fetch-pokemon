@@ -1,0 +1,8 @@
+ul {
+    list-style-type: none;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -6,13 +6,15 @@ import DropDown from './DropDown.js';
 
 class App extends Component {
   state = {query: '',
-            sortOrder: 'all',
               data: [],
               sortOption: 'asc',
               loading: true,
   }
   sortOption = ['asc', 'desc']
   fetchPokemon = async() => {
+    if (!this.state.loading){
+      this.setState({loading: true})
+    }
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     if (this.state.sortOption){
       url = url + `?sort=pokemon&direction=${this.state.sortOption}&pokemon=${this.state.query}`

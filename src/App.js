@@ -21,7 +21,7 @@ class App extends Component {
     let data = await response.json()
     setTimeout(() => {
         this.setState({data: data.results, loading: false})
-    }, 1000);
+    }, 500);
   }
   componentDidMount() {
     this.fetchPokemon();
@@ -49,8 +49,8 @@ class App extends Component {
             <button onClick={this.fetchPokemon}>Pokemon-GO</button>
           </div>
         </section>
-        <div className="images">
-          {this.state.loading && <h2>LOADING!!</h2>}
+        <div  className="images" >
+          {this.state.loading && <img id="pokeball" alt="pokeball" src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'/>}
           {!this.state.loading &&
           <ImageList pokemon={this.state.data}/>
           }

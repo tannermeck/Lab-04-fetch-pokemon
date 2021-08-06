@@ -5,9 +5,10 @@ class DropDown extends Component {
     render() { 
         return (  
             <>
-                <select>
-                    <option value="asc">Ascending</option>
-                    <option value="desc">Descending</option>
+                <select onChange={this.props.changeEvent} defaultValue='asc'>
+                    {this.props.options.map(option => {
+                        return <option key={option} value={option}>{option}ending</option>
+                    })}
                 </select>
             </>
         );

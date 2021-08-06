@@ -5,20 +5,29 @@ import DropDown from './DropDown.js';
 
 
 class App extends Component {
-  state = {query: null,
+  state = {query: '',
             sortOrder: 'all',
-              data: []
+              data: [],
+              sortOption: 'asc',
+              loading: true,
   }
+  sortOption = ['asc', 'desc']
   fetchPokemon = async() => {
-    let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex'
-    if (this.state.query){
-      url = url + `?pokemon=${this.state.query}`;
+    let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
+    if (this.state.sortOption){
+      url = url + `?sort=pokemon&direction=${this.state.sortOption}&pokemon=${this.state.query}`
     }
     let response = await fetch(url)
     let data = await response.json()
-    this.setState({data: data.results})
+    setTimeout(() => {
+        this.setState({data: data.results, loading: false})
+    }, 1000);
   }
   componentDidMount() {
+    this.fetchPokemon();
+  }
+  handleChange = async(e) => {
+    await this.setState({sortOption: e.target.value})
     this.fetchPokemon();
   }
   updateQuery = (e) => {
@@ -27,12 +36,25 @@ class App extends Component {
     render() { 
     return ( 
       <>
-        <h1>Pokemon App</h1>
-        <input type="text" onChange={this.updateQuery}/>
-        <DropDown/>
-        <button onClick={this.fetchPokemon}>Search!</button>
-        <ImageList pokemon={this.state.data}/>
-        
+        <section className="body">
+          <div>
+            <h1>Pokemon App</h1>
+          </div>
+          <div className="search">
+            <p>Search:</p>
+            <input type="text" onChange={this.updateQuery}/>
+            <DropDown className="drop-down"
+              changeEvent={this.handleChange}
+              options={this.sortOption}/>
+            <button onClick={this.fetchPokemon}>Pokemon-GO</button>
+          </div>
+        </section>
+        <div className="images">
+          {this.state.loading && <h2>LOADING!!</h2>}
+          {!this.state.loading &&
+          <ImageList pokemon={this.state.data}/>
+          }
+        </div>
       </>
      );
   }

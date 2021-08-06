@@ -10,8 +10,10 @@ class ImageItem extends Component {
                 <li>
                     <h1>{thing.pokemon.toUpperCase()}</h1>
                 </li>
-                <li>
                     <img alt={thing.pokemon} src={this.props.thing.url_image} />
+                <li className="hidden-ability">
+                    <h3>Hidden Ability:</h3>
+                    <p>{thing.ability_hidden}</p>
                 </li>
             </div>
          );

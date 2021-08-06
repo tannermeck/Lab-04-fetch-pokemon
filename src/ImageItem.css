@@ -1,6 +1,19 @@
+.pokemon-image {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
 img {
     height: 200px;
 }
-.pokemon-image {
-    margin: 20px;
+.pokemon-image h1 {
+    text-align: center;
+}
+.hidden-ability {
+    text-align: center;
+}
+.hidden-ability p {
+    font-family: cursive;
+    font-size: 20px;
 }

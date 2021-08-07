@@ -7,7 +7,7 @@ class DropDown extends Component {
             <>
                 <select onChange={this.props.changeEvent} defaultValue='asc'>
                     {this.props.options.map(option => {
-                        return <option key={option} value={option}>{option}ending</option>
+                        return <option key={option} value={option}>{option}</option>
                     })}
                 </select>
             </>

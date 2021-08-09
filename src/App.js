@@ -53,7 +53,7 @@ class App extends Component {
           <div className="search">
             <p>Search:</p>
             <input type="text" onChange={this.updateQuery}/>
-            <DropDown 
+            <DropDown
               changeEvent={this.sortAbility}
               options={sortType}
             />

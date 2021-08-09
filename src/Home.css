@@ -1,0 +1,19 @@
+.Home-Page {
+    background-color: brown;
+    min-height: 100vh;
+}
+h1 {
+    padding-top: 20px;
+}
+.Details ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type:disc;
+    align-items:flex-start;
+    padding: 20px;
+    margin-left: 20px;
+}
+.Details li {
+    padding: 20px;
+    font-size: 1.5rem;
+}

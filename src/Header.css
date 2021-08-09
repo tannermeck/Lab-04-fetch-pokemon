@@ -1,0 +1,15 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+.Title {
+    color: white;
+}
+.Links {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    
+
+}

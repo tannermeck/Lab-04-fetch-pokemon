@@ -8,9 +8,10 @@
 .Pokemon-Info h1 {
     text-transform: uppercase;
 }
-.Pokemon-Info img {
+img {
     width: 300px;
     margin: auto;
+    display: flex;
     margin-bottom: 0px;
     margin-top: 0px;
 }

@@ -1,0 +1,23 @@
+.Pokemon-Info {
+    background-color: brown;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.Pokemon-Info h1 {
+    text-transform: uppercase;
+}
+.Pokemon-Info img {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.Pokemon-Stats {
+    margin-top: 0px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
